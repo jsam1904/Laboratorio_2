@@ -43,4 +43,10 @@ fun main() {
 
     println("$valor1 es palindromos: $cadena")
     println("$valor2 es palindromos: $cadena2")
+
+    println("")
+    println("----------Saludo----------")
+    val nombre = listOf("Juan", "Pedro", "Diego", "Javier", "Maria")
+    val mapa = nombre.map { "\n ¡Hola, $it! \n" }
+    println("$mapa")
 }

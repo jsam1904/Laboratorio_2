@@ -21,6 +21,10 @@ fun isPalindroman(cadena: String): Boolean {
     return true
 }
 
+fun performOperation(a:Int, b:Int, ope:(Int, Int) -> Double): Double {
+    return ope(a, b)
+}
+
 fun main() {
     println("----------Promedio----------")
     val lista = listOf(1.1, 2.2, 3.3, 4.0, 5.6, 8.5, 10.5)
@@ -49,4 +53,17 @@ fun main() {
     val nombre = listOf("Juan", "Pedro", "Diego", "Javier", "Maria")
     val mapa = nombre.map { "\n ¡Hola, $it! \n" }
     println("$mapa")
+
+    println("")
+    println("----------Lambda----------")
+    val suma = performOperation(a = 5, b = 6){x,y -> (x + y).toDouble()}
+    val resta = performOperation(a = 5, b = 6){x,y -> (x - y).toDouble()}
+    val mult = performOperation(a = 5, b = 6){x,y -> (x * y).toDouble()}
+    val div = performOperation(a = 5, b = 6){x,y -> x.toDouble() / y}
+
+    println("La suma es: $suma")
+    println("La resta es: $resta")
+    println("La multiplicacion: $mult")
+    println("La division: $div")
+
 }

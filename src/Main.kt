@@ -1,9 +1,24 @@
+import kotlin.math.absoluteValue
+
 fun calcularPromedio (numeros: List<Double>): Double {
     if (numeros.isEmpty()) {
         return 0.0
     }
     val suma = numeros.reduce { acumulado, numero -> acumulado + numero }
     return suma / numeros.size
+}
+
+fun isPalindroman(cadena: String): Boolean {
+    var first = 0
+    var final = cadena.length -1
+    while (first < final) {
+        if (cadena[first] != cadena[final]) {
+            return false
+        }
+        first ++
+        final --
+    }
+    return true
 }
 
 fun main() {
@@ -19,5 +34,13 @@ fun main() {
     println("El impares es: $impares")
 
     println("")
-    println("----------Filtro----------")
+    println("----------Palindromo----------")
+    val valor1 = "Ana"
+    val valor2 = "Palabra"
+
+    val cadena = isPalindroman(valor1)
+    val cadena2 = isPalindroman(valor2)
+
+    println("$valor1 es palindromos: $cadena")
+    println("$valor2 es palindromos: $cadena2")
 }
